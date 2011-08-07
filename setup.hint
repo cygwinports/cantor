@@ -1,0 +1,5 @@
+category: KDE Math
+requires: libanalitza4 libgcc1 libkdecore5 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtXml4 libQtXmlPatterns4 libspectre1 libstdc++6 maxima R
+external-source: kdeedu
+sdesc: "KDE frontend for mathematical software"
+ldesc: "KDE education suite"
