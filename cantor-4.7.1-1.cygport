@@ -1,5 +1,0 @@
-inherit kde4
-
-
-# leftover from monolithic kdeedu
-CYGCMAKE_ARGS="-DBUILD_kalgebra=ON"
