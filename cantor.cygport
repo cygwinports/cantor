@@ -1,0 +1,12 @@
+inherit kde4
+
+NAME="cantor"
+VERSION=4.10.5
+RELEASE=1
+CATEGORY="Math"
+SUMMARY="KDE frontend for mathematical software"
+DESCRIPTION="Part of the KDE education suite"
+REQUIRES="maxima"
+
+# tests in included FindR.cmake are not portable
+CYGCMAKE_ARGS="-DGFORTRAN_LIBRARY=$(${FC} -print-file-name=libgfortran.dll.a)"
