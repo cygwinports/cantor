@@ -1,12 +1,12 @@
 inherit kde4
 
 NAME="cantor"
-VERSION=4.13.3
+VERSION=4.14.3
 RELEASE=1
 CATEGORY="Math"
 SUMMARY="KDE frontend for mathematical software"
 DESCRIPTION="Part of the KDE education suite"
-REQUIRES="maxima octave"
+REQUIRES="octave" # maxima
 
 # tests in included FindR.cmake are not portable
 CYGCMAKE_ARGS="-DGFORTRAN_LIBRARY=$(${FC} -print-file-name=libgfortran.dll.a)"
