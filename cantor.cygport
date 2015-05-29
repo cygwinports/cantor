@@ -6,7 +6,7 @@ RELEASE=1
 CATEGORY="Math"
 SUMMARY="KDE frontend for mathematical software"
 DESCRIPTION="Part of the KDE education suite"
-REQUIRES="octave" # maxima
+REQUIRES="kate4-part maxima octave"
 
 # tests in included FindR.cmake are not portable
 CYGCMAKE_ARGS="-DGFORTRAN_LIBRARY=$(${FC} -print-file-name=libgfortran.dll.a)"
