@@ -1,0 +1,14 @@
+--- origsrc/cantor-15.04.3/src/backends/qalculate/qalculateexpression.cpp	2015-05-31 07:00:53.000000000 -0500
++++ src/cantor-15.04.3/src/backends/qalculate/qalculateexpression.cpp	2015-09-16 18:06:49.475864700 -0500
+@@ -771,9 +771,9 @@ void QalculateExpression::evaluatePlotCo
+ 	if (plotParameters.filetype == PLOT_FILETYPE_EPS ||
+ 	    plotParameters.filetype == PLOT_FILETYPE_PS  ||
+ 	    (plotParameters.filetype == PLOT_FILETYPE_AUTO && p >= 4 &&
+-	     plotParameters.filename.substr(p-4,4) == QLatin1String(".eps")) ||
++	     plotParameters.filename.substr(p-4,4) == ".eps") ||
+ 	    (plotParameters.filetype == PLOT_FILETYPE_AUTO && p >= 3 &&
+-	     plotParameters.filename.substr(p-3,3) == QLatin1String(".ps")))
++	     plotParameters.filename.substr(p-3,3) == ".ps"))
+ 	    setResult(new Cantor::EpsResult(KUrl(plotParameters.filename.c_str())));
+ 	else
+ 	    setResult(new Cantor::ImageResult(KUrl(plotParameters.filename.c_str())));

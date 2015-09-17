@@ -1,12 +1,136 @@
-inherit kde4
+inherit kf5
 
 NAME="cantor"
-VERSION=14.12.3
+VERSION=15.04.3
 RELEASE=1
 CATEGORY="Math"
 SUMMARY="KDE frontend for mathematical software"
 DESCRIPTION="Part of the KDE education suite"
-REQUIRES="kate4-part kde-runtime maxima octave"
+PATCH_URI="
+	15.04.3-cmake-part.patch
+	15.04.3-fix-qalculate-backend.patch
+"
+
+PKG_NAMES="cantor cantor-backend-kalgebra cantor-backend-lua cantor-backend-maxima
+	   cantor-backend-octave cantor-backend-qalculate cantor-backend-python2
+	   cantor-backend-python3 cantor-backend-r cantor-devel"
+cantor_REQUIRES="texlive-collection-latex"
+cantor_CONTENTS="
+	--exclude=*[^ln_]backend.[dkr]*
+	--exclude=*qalculateplotassistant.[dkr]*
+	etc/postinstall/cantor.sh
+	etc/xdg/cantor.knsrc
+	usr/bin/cantor.exe
+	usr/bin/cygcantor_config.dll
+	usr/bin/cygcantor_pythonbackend.dll
+	usr/bin/cygcantorlibs-6.dll
+	usr/lib/qt5/plugins/cantor_*.dll
+	usr/lib/qt5/plugins/libcantorpart.dll
+	usr/share/appdata/org.kde.cantor.appdata.xml
+	usr/share/applications/org.kde.cantor.desktop
+	usr/share/cantor/cantor_*.rc
+	usr/share/cantor/xslt/
+	usr/share/config.kcfg/cantor*.kcfg
+	usr/share/doc/HTML/en/cantor/
+	usr/share/doc/cantor/
+	usr/share/icons/hicolor/*/apps/cantor.*
+	usr/share/icons/hicolor/*/apps/*backend.*
+	usr/share/kservices5/cantor/
+	usr/share/kservicetypes5/cantor_*
+	usr/share/kxmlgui5/cantor/
+"
+cantor_devel_CONTENTS="
+	usr/include/cantor/
+	usr/lib/libcantorlibs.dll.a
+"
+cantor_backend_kalgebra_SUMMARY="KAlgebra backend for Cantor mathematical software"
+cantor_backend_kalgebra_CONTENTS="
+	etc/xdg/cantor_kalgebra.knsrc
+	usr/lib/qt5/plugins/cantor_kalgebrabackend.dll
+	usr/share/config.kcfg/kalgebrabackend.kcfg
+	usr/share/kservices5/cantor/kalgebrabackend.desktop
+"
+cantor_backend_lua_SUMMARY="Lua backend for Cantor mathematical software"
+cantor_backend_lua_CONTENTS="
+	etc/xdg/cantor_lua.knsrc
+	usr/lib/qt5/plugins/cantor_luabackend.dll
+	usr/share/config.kcfg/luabackend.kcfg
+	usr/share/kservices5/cantor/luabackend.desktop
+"
+cantor_backend_maxima_SUMMARY="Maxima backend for Cantor mathematical software"
+cantor_backend_maxima_REQUIRES="maxima"
+cantor_backend_maxima_CONTENTS="
+	etc/xdg/cantor_maxima.knsrc
+	usr/lib/qt5/plugins/cantor_maximabackend.dll
+	usr/share/cantor/maximabackend/
+	usr/share/config.kcfg/maximabackend.kcfg
+	usr/share/kservices5/cantor/maximabackend.desktop
+"
+cantor_backend_octave_SUMMARY="Octave backend for Cantor mathematical software"
+cantor_backend_octave_REQUIRES="octave"
+cantor_backend_octave_CONTENTS="
+	etc/xdg/cantor_octave.knsrc
+	usr/lib/qt5/plugins/cantor_octavebackend.dll
+	usr/share/cantor/octavebackend/
+	usr/share/config.kcfg/octavebackend.kcfg
+	usr/share/kservices5/cantor/octavebackend.desktop
+"
+cantor_backend_python2_SUMMARY="Python2 backend for Cantor mathematical software"
+cantor_backend_python2_REQUIRES="python-numpy"
+cantor_backend_python2_CONTENTS="
+	etc/xdg/cantor_python2.knsrc
+	usr/lib/qt5/plugins/cantor_python2backend.dll
+	usr/share/config.kcfg/python2backend.kcfg
+	usr/share/kservices5/cantor/python2backend.desktop
+"
+cantor_backend_python3_SUMMARY="Python3 backend for Cantor mathematical software"
+cantor_backend_python3_REQUIRES="python3-numpy"
+cantor_backend_python3_CONTENTS="
+	etc/xdg/cantor_python3.knsrc
+	usr/bin/cantor_python3server.exe
+	usr/lib/qt5/plugins/cantor_python3backend.dll
+	usr/share/config.kcfg/python3backend.kcfg
+	usr/share/kservices5/cantor/python3backend.desktop
+"
+cantor_backend_qalculate_SUMMARY="Qalculate backend for Cantor mathematical software"
+cantor_backend_qalculate_CONTENTS="
+	etc/xdg/cantor_qalculate.knsrc
+	usr/lib/qt5/plugins/cantor_qalculatebackend.dll
+	usr/lib/qt5/plugins/cantor_qalculateplotassistant.dll
+	usr/share/cantor/cantor_qalculateplotassistant.rc
+	usr/share/config.kcfg/qalculatebackend.kcfg
+	usr/share/kservices5/cantor/qalculate*.desktop
+"
+cantor_backend_r_SUMMARY="R backend for Cantor mathematical software"
+cantor_backend_r_CONTENTS="
+	etc/xdg/cantor_r.knsrc
+	usr/bin/cantor_rserver.exe
+	usr/lib/qt5/plugins/cantor_rbackend.dll
+	usr/share/config.kcfg/rserver.kcfg
+	usr/share/kservices5/cantor/rbackend.desktop
+"
+cantor_backend_sage_SUMMARY="Sage backend for Cantor mathematical software"
+cantor_backend_sage_CONTENTS="
+	etc/xdg/cantor_sage.knsrc
+	usr/lib/qt5/plugins/cantor_sagebackend.dll
+	usr/share/cantor/sagebackend/
+	usr/share/config.kcfg/sagebackend.kcfg
+	usr/share/kservices5/cantor/sagebackend.desktop
+"
+cantor_backend_scilab_SUMMARY="Scilab backend for Cantor mathematical software"
+cantor_backend_scilab_CONTENTS="
+	etc/xdg/cantor_scilab.knsrc
+	usr/lib/qt5/plugins/cantor_scilabbackend.dll
+	usr/share/config.kcfg/scilabbackend.kcfg
+	usr/share/kservices5/cantor/scilabbackend.desktop
+"
+# sage and scilab have yet to be built for cygwin
+PKG_IGNORE="
+	${cantor_backend_sage_CONTENTS}
+	${cantor_backend_scilab_CONTENTS}
+	usr/lib/libcantor_config.dll.a
+	usr/lib/libcantor_pythonbackend.dll.a
+"
 
 # tests in included FindR.cmake are not portable
 CYGCMAKE_ARGS="-DGFORTRAN_LIBRARY=$(${FC} -print-file-name=libgfortran.dll.a)"
