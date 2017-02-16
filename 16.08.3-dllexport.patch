@@ -1,0 +1,8 @@
+--- origsrc/cantor-16.08.3/src/lib/test/CMakeLists.txt	2016-11-06 17:12:36.000000000 -0600
++++ src/cantor-16.08.3/src/lib/test/CMakeLists.txt	2016-11-14 13:17:25.417738100 -0600
+@@ -1,4 +1,5 @@
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/..)
++add_definitions(-UMAKE_CANTORLIBS_LIB -DMAKE_CANTORTEST_LIB)
+ 
+ set(cantortest_SRCS
+     backendtest.cpp)

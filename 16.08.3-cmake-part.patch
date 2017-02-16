@@ -1,0 +1,11 @@
+--- origsrc/cantor-16.08.3/src/CMakeLists.txt	2016-11-06 17:12:36.000000000 -0600
++++ src/cantor-16.08.3/src/CMakeLists.txt	2016-11-14 12:27:57.307218600 -0600
+@@ -91,7 +91,7 @@ kcoreaddons_add_plugin(cantorpart
+     JSON "cantor_part.json"
+     INSTALL_NAMESPACE ".")
+ 
+-set_target_properties(cantorpart PROPERTIES PREFIX "${CMAKE_SHARED_LIBRARY_PREFIX}")
++set_target_properties(cantorpart PROPERTIES PREFIX "lib")
+ 
+ target_link_libraries(cantorpart KF5::Parts KF5::NewStuff
+                      KF5::TextEditor ${Qt5XmlPatterns_LIBRARIES}
