@@ -2,7 +2,7 @@ inherit kf5
 
 NAME="cantor"
 VERSION=16.08.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Math"
 SUMMARY="KDE frontend for mathematical software"
 DESCRIPTION="Part of the KDE education suite"
