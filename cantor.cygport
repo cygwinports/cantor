@@ -9,6 +9,7 @@ DESCRIPTION="Part of the KDE education suite"
 PATCH_URI="
 	16.08.3-cmake-part.patch
 	16.08.3-dllexport.patch
+	16.08.3-python36.patch
 "
 
 PKG_NAMES="cantor cantor-backend-kalgebra cantor-backend-lua cantor-backend-maxima

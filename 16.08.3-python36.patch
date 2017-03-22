@@ -1,0 +1,11 @@
+--- origsrc/cantor-16.08.3/cmake/FindPythonLibs3.cmake	2016-11-06 17:12:36.000000000 -0600
++++ src/cantor-16.08.3/cmake/FindPythonLibs3.cmake	2017-03-22 03:19:33.667638000 -0500
+@@ -5,7 +5,7 @@ set(PYTHONLIBS3_DEFINITIONS ${PYTHONLIBS
+ find_path(PYTHONLIBS3_INCLUDE_DIR Python.h
+           HINTS ${PYTHONLIBS3_INCLUDEDIR} ${PYTHONLIBS3_INCLUDE_DIRS})
+ 
+-find_library(PYTHONLIBS3_LIBRARY NAMES python3.2m python3.3m python3.4m python3.5m
++find_library(PYTHONLIBS3_LIBRARY NAMES python3.2m python3.3m python3.4m python3.5m python3.6m
+              HINTS ${PYTHONLIBS3_LIBDIR} ${PYTHONLIBS3_LIBRARY_DIRS} )
+ 
+ set(PYTHONLIBS3_LIBRARIES ${PYTHONLIBS3_LIBRARY} )
