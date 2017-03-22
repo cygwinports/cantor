@@ -72,7 +72,7 @@ cantor_backend_octave_CONTENTS="
 	usr/share/config.kcfg/octavebackend.kcfg
 "
 cantor_backend_python2_SUMMARY="Python2 backend for Cantor mathematical software"
-cantor_backend_python2_REQUIRES="python-numpy"
+cantor_backend_python2_REQUIRES="python2-numpy"
 cantor_backend_python2_CONTENTS="
 	etc/xdg/cantor_python2.knsrc
 	usr/lib/qt5/plugins/cantor/backends/cantor_python2backend.dll
