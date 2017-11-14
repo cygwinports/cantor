@@ -1,15 +1,14 @@
 inherit kf5
 
 NAME="cantor"
-VERSION=16.08.3
-RELEASE=2
+VERSION=17.08.3
+RELEASE=1
 CATEGORY="Math"
 SUMMARY="KDE frontend for mathematical software"
 DESCRIPTION="Part of the KDE education suite"
 PATCH_URI="
 	16.08.3-cmake-part.patch
 	16.08.3-dllexport.patch
-	16.08.3-python36.patch
 "
 
 PKG_NAMES="cantor cantor-backend-kalgebra cantor-backend-lua cantor-backend-maxima
@@ -28,16 +27,17 @@ cantor_CONTENTS="
 	usr/lib/qt5/plugins/cantor/backends/cantor_nullbackend.dll
 	usr/lib/qt5/plugins/cantor/panels/
 	usr/lib/qt5/plugins/libcantorpart.dll
-	usr/share/appdata/org.kde.cantor.appdata.xml
 	usr/share/applications/org.kde.cantor.desktop
 	usr/share/cantor/cantor_*.rc
 	usr/share/cantor/xslt/
 	usr/share/config.kcfg/cantor*.kcfg
-	usr/share/doc/HTML/en/cantor/
+	usr/share/doc/HTML/*/cantor/
 	usr/share/doc/cantor/
 	usr/share/icons/hicolor/*/apps/cantor.*
 	usr/share/icons/hicolor/*/apps/*backend.*
 	usr/share/kxmlgui5/cantor/
+	usr/share/locale/*/LC_MESSAGES/cantor.mo
+	usr/share/metainfo/org.kde.cantor.appdata.xml
 "
 cantor_devel_CONTENTS="
 	usr/include/cantor/
@@ -60,7 +60,6 @@ cantor_backend_maxima_REQUIRES="maxima"
 cantor_backend_maxima_CONTENTS="
 	etc/xdg/cantor_maxima.knsrc
 	usr/lib/qt5/plugins/cantor/backends/cantor_maximabackend.dll
-	usr/share/cantor/maximabackend/
 	usr/share/config.kcfg/maximabackend.kcfg
 "
 cantor_backend_octave_SUMMARY="Octave backend for Cantor mathematical software"
@@ -105,7 +104,6 @@ cantor_backend_sage_SUMMARY="Sage backend for Cantor mathematical software"
 cantor_backend_sage_CONTENTS="
 	etc/xdg/cantor_sage.knsrc
 	usr/lib/qt5/plugins/cantor/backends/cantor_sagebackend.dll
-	usr/share/cantor/sagebackend/
 	usr/share/config.kcfg/sagebackend.kcfg
 "
 cantor_backend_scilab_SUMMARY="Scilab backend for Cantor mathematical software"
